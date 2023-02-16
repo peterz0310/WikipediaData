@@ -10,7 +10,7 @@ path = os.path.join(category, "Links")
 
 for filename in os.listdir(path):
     if filename.endswith(".txt"):
-        with open(os.path.join(path, filename)) as file:
+        with open(os.path.join(path, filename), "r", encoding="utf-8") as file:
             links = file.readlines()
             event_date = links[0].strip()
             links = links[1:]
