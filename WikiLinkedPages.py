@@ -49,6 +49,10 @@ for filename in os.listdir(path):
                             data += json_data['items']
                     except:
                         print("\033[91m" + "Error getting data on " + page_title+"." + '\033[0m')
+                        #Add page title to a txt file 
+                        if page_title not in open("failedPagesPrimary.txt").read():
+                            with open("failedPagesSecondary.txt", "a") as file:
+                                file.write(page_title+"\n")
                         continue
 
                     # extract the view count for each day and save as a CSV file
