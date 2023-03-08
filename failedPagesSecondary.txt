@@ -13,3 +13,26 @@
 2021 AV7
 2021 DW1
 2021 GW4
+(248370) 2005 QN173
+118 Peitho
+1773 Rumpelstilz
+2004 JX20
+2016 DV1
+2020 XR
+2021 DW1
+2021 GW4
+2035 Stearns
+2516 Roman
+6481 Tenzing
+8P/Tuttle
+AOSO
+ARICA
+ARRAKIHS
+Astro-1 Telescope
+Biomass (satellite)
+C/2014 OG392 (PanSTARRS)
+C/2014 UN271 (Bernardinelli-Bernstein)
+C/2021 A1 (Leonard)
+C/2021 J1 (Maury-Attard)
+C/2021 T4 (Lemmon)
+CEERS-93316
