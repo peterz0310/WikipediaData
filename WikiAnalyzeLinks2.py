@@ -2,6 +2,8 @@ import csv
 import os
 import sys
 from datetime import datetime, timedelta
+import matplotlib.pyplot as plt
+import numpy as np
 
 def main():
     # Get the directory to search for CSV files.
@@ -19,6 +21,8 @@ def main():
                 # Create a list to hold the "Views" values and file names from each CSV file.
                 views_data = []
                 percent_data = []
+                x = []
+                y = []
 
                 # Loop over the CSV files in the folder.
                 for csv_file in csv_files:
@@ -39,6 +43,20 @@ def main():
                             percent_increase = 0
                         views_data.append([os.path.splitext(csv_file)[0], baseline_value, baseline_date, peak_value, peak_date, percent_increase])
                         percent_data.append([os.path.splitext(csv_file)[0], percent_increase])
+                        x.append([os.path.splitext(csv_file)[0]])
+                        y.append([percent_increase])
+                        #x = np.array([x])
+                        #y = np.array([y])
+
+               
+            
+                plt.xlabel('Topic')
+                plt.ylabel('Percent Increase')
+                plt.title('Trends in Views')
+                plt.plot(x,y)
+                plt.show()
+
+
 
                 # Write the "Views" values and file names to a new CSV file.
                 output_dir = os.path.join(sys.argv[1], 'Analysis')
