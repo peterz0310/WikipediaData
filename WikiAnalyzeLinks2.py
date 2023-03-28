@@ -43,8 +43,8 @@ def main():
                             percent_increase = 0
                         views_data.append([os.path.splitext(csv_file)[0], baseline_value, baseline_date, peak_value, peak_date, percent_increase])
                         percent_data.append([os.path.splitext(csv_file)[0], percent_increase])
-                        x.append([os.path.splitext(csv_file)[0]])
-                        y.append([percent_increase])
+                        x = np.array([os.path.splitext(csv_file)[0]])
+                        y = np.array([percent_increase])
                         #x = np.array([x])
                         #y = np.array([y])
 
