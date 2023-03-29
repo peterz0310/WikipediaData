@@ -49,7 +49,7 @@ def main():
                         #y = np.array([y])
 
                 plt.plot(x,y) #for all data points
-                #plt.plot(x[1:15],y[1:15]) #for less data points and easier-to-read graph
+                #plt.plot(x[1:5],y[1:5]) #for less data points and easier-to-read graph
                 plt.xlabel('Topic')
                 plt.ylabel('Percent Increase')
                 plt.title('Trends in Views')
