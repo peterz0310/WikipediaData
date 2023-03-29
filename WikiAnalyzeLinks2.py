@@ -43,37 +43,36 @@ def main():
                             percent_increase = 0
                         views_data.append([os.path.splitext(csv_file)[0], baseline_value, baseline_date, peak_value, peak_date, percent_increase])
                         percent_data.append([os.path.splitext(csv_file)[0], percent_increase])
-                        x.append([os.path.splitext(csv_file)[0]])
-                        y.append([percent_increase])
+                        x.append(os.path.splitext(csv_file)[0])
+                        y.append(int(percent_increase))
                         #x = np.array([x])
                         #y = np.array([y])
 
-               
-            
+                plt.plot(x,y) #for all data points
+                #plt.plot(x[1:5],y[1:5]) #for less data points and easier-to-read graph
                 plt.xlabel('Topic')
                 plt.ylabel('Percent Increase')
                 plt.title('Trends in Views')
-                plt.plot(x,y)
                 plt.show()
-
+            
 
 
                 # Write the "Views" values and file names to a new CSV file.
-                output_dir = os.path.join(sys.argv[1], 'Analysis')
-                os.makedirs(output_dir, exist_ok=True)
-                output_file_path = os.path.join(output_dir, f'{folder_name}.csv')
-                with open(output_file_path, 'w', newline='') as f:
-                    csv_writer = csv.writer(f)
-                    csv_writer.writerow(['File', 'Baseline', 'Baseline Date', 'Peak', 'Peak Date', 'Percent Increase'])
-                    csv_writer.writerows(views_data)
+            output_dir = os.path.join(sys.argv[1], 'Analysis')
+            os.makedirs(output_dir, exist_ok=True)
+            output_file_path = os.path.join(output_dir, f'{folder_name}.csv')
+            with open(output_file_path, 'w', newline='') as f:
+                csv_writer = csv.writer(f)
+                csv_writer.writerow(['File', 'Baseline', 'Baseline Date', 'Peak', 'Peak Date', 'Percent Increase'])
+                csv_writer.writerows(views_data)
                 
-                output_dir1 = os.path.join(sys.argv[1], 'Graph Analysis')
-                os.makedirs(output_dir1, exist_ok=True)
-                output_file_path = os.path.join(output_dir1, f'{folder_name}.csv')
-                with open(output_file_path, 'w', newline='') as f:
-                    csv_writer = csv.writer(f)
-                    csv_writer.writerow(['File', 'Percent Increase'])
-                    csv_writer.writerows(percent_data)
+            output_dir1 = os.path.join(sys.argv[1], 'Graph Analysis')
+            os.makedirs(output_dir1, exist_ok=True)
+            output_file_path = os.path.join(output_dir1, f'{folder_name}.csv')
+            with open(output_file_path, 'w', newline='') as f:
+                csv_writer = csv.writer(f)
+                csv_writer.writerow(['File', 'Percent Increase'])
+                csv_writer.writerows(percent_data)
                 
     print('Analysis complete. Output saved in:', output_dir + " and " + output_dir1 + "/")
 
