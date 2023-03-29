@@ -1,4 +1,4 @@
-Name,EventDate (Peak Views),Category
+Name,EventDate ,Category
 Gravitational wave,20160211,Science
 Comet,20230201,Science
 CRISPR gene editing,20120528,Science
@@ -90,7 +90,7 @@ Donald Trump Jr.,20180716,Politics
 Bernie Sanders,20200223,Politics
 Vladimir Putin,20140304,News
 Wonder Woman (2017 film),20170602,Entertainment
-Russia–Ukraine gas disputes	,20140109,News
+"Russia–Ukraine gas disputes	",20140109,News
 Tiger King,20200327,Entertainment
 David Attenborough,20201225,Science
 Syrian Civil War,20160928,News
