@@ -47,9 +47,17 @@ def main():
                         y.append(int(percent_increase))
                         #x = np.array([x])
                         #y = np.array([y])
-
+                
+                #plt.figure(figsize = (300,300))
+                plt.figure().set_figwidth(500)
+                #plt.figure().set_figheight(300)
                 plt.plot(x,y) #for all data points
-                #plt.plot(x[1:5],y[1:5]) #for less data points and easier-to-read graph
+                #plt.plot(x[1:16],y[1:16]) #for less data points and easier-to-read graph
+                plt.xticks(rotation = 90)
+                plt.xticks(fontsize = 4)
+                #ax = plt.gca()
+                #plt.draw()
+                #ax.set_xticklabels(ax.get_xticks(), rotation = 45)
                 plt.xlabel('Topic')
                 plt.ylabel('Percent Increase')
                 plt.title('Trends in Views')
