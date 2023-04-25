@@ -7,7 +7,9 @@ import numpy as np
 
 def main():
     # Get the directory to search for CSV files.
-    root_dir = os.path.join(sys.argv[1], 'Views')
+    root_dir = os.path.join(sys.argv[1], 'Brexit')
+    #root_dir = os.path.join(sys.argv[1], 'DonaldTrump')
+    #root_dir = os.path.join(sys.argv[1], 'GravitationalWave')
 
     # Loop over the folders in the root directory.
     for folder_name in os.listdir(root_dir):
@@ -42,25 +44,24 @@ def main():
                         except ZeroDivisionError:
                             percent_increase = 0
                         views_data.append([os.path.splitext(csv_file)[0], baseline_value, baseline_date, peak_value, peak_date, percent_increase])
+                        views_data.sort(key=lambda x: x[5], reverse = True)
                         percent_data.append([os.path.splitext(csv_file)[0], percent_increase])
-                        x.append(os.path.splitext(csv_file)[0])
-                        y.append(int(percent_increase))
-                        #x = np.array([x])
-                        #y = np.array([y])
+                        percent_data.sort(key=lambda x: x[1], reverse = True)
+                        x = [i[0] for i in percent_data]
+                        y = [int(j[1]) for j in percent_data]
+                        
                 
-                #plt.figure(figsize = (300,300))
-                plt.figure().set_figwidth(500)
-                #plt.figure().set_figheight(300)
-                plt.plot(x,y) #for all data points
-                #plt.plot(x[1:16],y[1:16]) #for less data points and easier-to-read graph
-                plt.xticks(rotation = 90)
-                plt.xticks(fontsize = 4)
-                #ax = plt.gca()
-                #plt.draw()
-                #ax.set_xticklabels(ax.get_xticks(), rotation = 45)
-                plt.xlabel('Topic')
+                
+                fig = plt.figure()
+                fig.set_figwidth(500)
+                plt.bar(x[:25],y[:25])
+                plt.xticks(rotation=90)
+                plt.margins(x = 0, y = 0)
+                plt.xlabel('Topic', labelpad = 2)
                 plt.ylabel('Percent Increase')
-                plt.title('Trends in Views')
+                plt.title('Brexit')
+                #plt.title('Trump Election Victory, 2016')
+                #plt.title('Observation of Gravitational Waves)
                 plt.show()
             
 
